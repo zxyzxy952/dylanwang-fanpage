@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王鹤棣｜个人粉丝介绍官网</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        body{
+            background: linear-gradient(#5c40b8,#9b6cd8,#3b2970);
+            min-height: 100vh;
+            font-family:微软雅黑;
+            color:#ffffff;
+            scroll-behavior: smooth;
+        }
+        .star{
+            position: fixed;
+            width:8px;height:8px;
+            background:#e2d5f8;
+            border-radius:50%;
+            box-shadow: 0 0 12px #c3a6ee;
+            animation: fall 7s linear infinite;
+            z-index:-1;
+        }
+        @keyframes fall{
+            0%{transform: translateY(-100vh);opacity:0;}
+            10%{opacity:1;}
+            90%{opacity:1;}
+            100%{transform: translateY(100vh);opacity:0;}
+        }
+        .nav{
+            width:100%;
+            background:rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            text-align:center;
+            padding:18px 0;
+            position:sticky;
+            top:0;
+            z-index:99;
+        }
+        .nav a{
+            color:#f3eaff;
+            text-decoration:none;
+            margin:0 15px;
+            font-size:16px;
+            transition: 0.3s;
+        }
+        .nav a:hover{
+            color:#d4b8f7;
+            letter-spacing:2px;
+        }
+        .container{
+            width:88%;
+            max-width:950px;
+            margin:0 auto;
+            padding:35px 0;
+        }
+        h1{
+            text-align:center;
+            font-size:42px;
+            letter-spacing:8px;
+            text-shadow: 0 0 20px #c7a9ee;
+            margin-top:20px;
+        }
+        .yanse{
+            text-align:center;
+            margin:15px 0 30px;
+            font-size:18px;
+            color:#e8dfff;
+        }
+        .img-box{
+            text-align:center;
+            margin-bottom:35px;
+        }
+        .img-box img{
+            width:240px;
+            border-radius:18px;
+            border:3px solid #d4c2f5;
+            box-shadow: 0 0 22px #9472d6;
+            margin:10px;
+            transition: 0.4s ease;
+        }
+        .img-box img:hover{
+            transform: scale(1.05);
+        }
+        .box{
+            background:rgba(255,255,255,0.13);
+            backdrop-filter: blur(12px);
+            border-radius:22px;
+            padding:30px;
+            margin:25px 0;
+            border:1px solid rgba(230,212,255,0.25);
+            transition: 0.3s;
+        }
+        .box:hover{
+            background:rgba(255,255,255,0.18);
+        }
+        h2{
+            margin-bottom:18px;
+            border-left:5px solid #b99ce6;
+            padding-left:14px;
+            font-size:22px;
+        }
+        p{
+            line-height:1.9;
+            font-size:16px;
+        }
+        .footer{
+            text-align:center;
+            margin:40px 0 20px;
+            padding:20px;
+            opacity:0.8;
+        }
+        /*留言评论板块样式*/
+        .comment-area{
+            margin-top:30px;
+        }
+        #msgInput{
+            width:100%;
+            height:100px;
+            border-radius:15px;
+            padding:15px;
+            border:none;
+            outline:none;
+            font-size:15px;
+            background:rgba(255,255,255,0.85);
+            color:#333;
+        }
+        .btn{
+            margin-top:15px;
+            padding:10px 30px;
+            border-radius:12px;
+            border: none;
+            background:#9b6cd8;
+            color:white;
+            font-size:15px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+        .btn:hover{
+            background:#7c4fc0;
+        }
+        .list-box{
+            margin-top:25px;
+        }
+        .liuyan{
+            background:rgba(255,255,255,0.15);
+            border-radius:12px;
+            padding:15px;
+            margin:12px 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        for(let i=1;i<=80;i++){
+            let s=document.createElement("div")
+            s.className="star"
+            s.style.left = Math.random()*100+"%"
+            s.style.animationDelay = Math.random()*7+"s"
+            document.body.appendChild(s)
+        }
+    </script>
+
+    <div class="nav">
+        <a href="#home">首页简介</a>
+        <a href="#data">个人资料</a>
+        <a href="#movie">影视作品</a>
+        <a href="#support">粉丝应援</a>
+        <a href="#word">励志语录</a>
+        <a href="#comment">粉丝留言</a>
+    </div>
+
+    <div class="container">
+        <div id="home">
+        <h1>王 鹤 棣</h1>
+        <p class="yanse">专属应援色｜银河紫 #9B6CD8</p>
+
+        <div class="img-box">
+            <img src="wanghedi.jpg">
+            <img src="wanghedi2.jpg">
+            <img src="wanghedi3.jpg">
+        </div>
+        </div>
+
+        <div class="box" id="data">
+            <h2>个人基础档案</h2>
+            <p>姓名：王鹤棣</p>
+            <p>生日：1998年05月09日</p>
+            <p>星座：金牛座</p>
+            <p>出生地：四川省乐山市</p>
+            <p>身高：183cm</p>
+            <p>职业：内地男演员、艺人</p>
+            <p>正式出道：2018年</p>
+        </div>
+
+        <div class="box">
+            <h2>人物个人简介</h2>
+            <p>王鹤棣拥有独一无二的少年气质，性格坦荡热烈，为人直率纯粹，性格开朗洒脱。
+            自带耀眼出众的光芒，长相硬朗帅气，气质清冷又温柔。一路走来踏实努力，默默沉淀自己，
+            不惧外界流言非议，永远保持赤诚善良，用自己的努力不断突破自我，奔赴属于自己的万丈星光。</p>
+        </div>
+
+        <div class="box" id="movie">
+            <h2>经典影视作品</h2>
+            <p>1.《流星花园》 饰演 道明寺</p>
+            <p>2.《苍兰诀》 饰演 东方青苍</p>
+            <p>3.《以爱为营》 饰演 时宴</p>
+            <p>4.《浮图缘》 饰演 肖铎</p>
+            <p>5.《理智派生活》 饰演 祁晓</p>
+            <p>6.常驻综艺《你好星期六》</p>
+        </div>
+
+        <div class="box" id="support">
+            <h2>银河紫专属应援</h2>
+            <p>专属应援色：银河紫</p>
+            <p>应援寓意：浩瀚星河，温柔绵长，紫色代表独一份的偏爱与浪漫。</p>
+            <p>山海不负相遇，棣棣永远万丈光芒，所有粉丝都会一直长久相伴。</p>
+        </div>
+
+        <div class="box" id="word">
+            <h2>治愈励志语录</h2>
+            <p>①少年自有玫瑰与星光，风雨兼程，亦可闪闪发光。</p>
+            <p>②忠于自己，热爱世间，万般风景，皆可自愈。</p>
+            <p>③前路漫漫亦灿灿，所有美好都会如期而至。</p>
+        </div>
+
+        <!--全新粉丝留言评论板块-->
+        <div class="box" id="comment">
+            <h2>粉丝留言评论区</h2>
+            <div class="comment-area">
+                <textarea id="msgInput" placeholder="在这里写下你对王鹤棣的祝福、粉丝留言......"></textarea>
+                <button class="btn" onclick="addMsg()">提交留言</button>
+                <div class="list-box" id="list"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>王鹤棣粉丝个人介绍网页｜完整制作</p>
+        </div>
+    </div>
+
+    <!--留言功能脚本-->
+    <script>
+        //存放所有留言
+        let messageArr = [];
+        //发布留言
+        function addMsg(){
+            let val = document.getElementById("msgInput").value;
+            if(val == ""){
+                alert("请先填写留言内容！")
+                return;
+            }
+            messageArr.push(val)
+            renderList()
+            document.getElementById("msgInput").value = "";
+        }
+        //展示全部留言
+        function renderList(){
+            let html = "";
+            for(let i = 0;i < messageArr.length;i++){
+                html += `<div class="liuyan">${messageArr[i]}</div>`
+            }
+            document.getElementById("list").innerHTML = html;
+        }
+    </script>
+</body>
+</html>
