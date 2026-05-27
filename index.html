@@ -253,30 +253,99 @@
     margin-bottom: 20px;
     font-family: 'Microsoft YaHei', sans-serif;
   ">💬 粉丝留言区</h3>
-
-<!-- 粉丝留言区 - 适配配置好的 Utterances -->
 <div style="
   margin-top: 80px;
   padding: 30px 20px;
-  background: rgba(0, 0, 0, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(128, 0, 128, 0.2);
+  border-radius: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 ">
   <h3 style="
     color: white;
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 25px;
     font-family: 'Microsoft YaHei', sans-serif;
-  ">💬 粉丝留言区</h3>
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  ">
+    <span style="width: 5px; height: 28px; background: white; display: inline-block;"></span>
+    粉丝留言评论区
+  </h3>
 
-  <!-- Utterances 留言板（和你的配置完全对应） -->
-  <script src="https://utteranc.es/client.js"
-          repo="zxyzxy952/dylanwang-fanpage"
-          issue-term="pathname"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
+  <textarea id="msgInput" placeholder="写下你想对棣棣说的话..." style="
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    resize: vertical;
+    outline: none;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+  ">nihao1</textarea>
+
+  <button onclick="addMsg()" style="
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  ">提交留言</button>
+
+  <div id="msgBox" style="
+    margin-top: 30px;
+    text-align: left;
+    color: white;
+    max-height: 400px;
+    overflow-y: auto;
+  "></div>
 </div>
+
+<script>
+// 读取本地存储的留言
+let list = JSON.parse(localStorage.getItem("fanMessages")) || [];
+const box = document.getElementById("msgBox");
+const input = document.getElementById("msgInput");
+
+// 渲染留言列表
+function renderMessages() {
+  box.innerHTML = "";
+  list.forEach((item, index) => {
+    let msgDiv = document.createElement("div");
+    msgDiv.style = `
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding: 15px 0;
+      font-size: 16px;
+    `;
+    msgDiv.innerText = item;
+    box.appendChild(msgDiv);
+  });
+}
+
+// 提交留言
+function addMsg() {
+  let val = input.value.trim();
+  if (!val) {
+    alert("请先输入留言内容哦~");
+    return;
+  }
+  list.push(val);
+  localStorage.setItem("fanMessages", JSON.stringify(list));
+  input.value = "";
+  renderMessages();
+  alert("留言提交成功！");
+}
+
+// 页面加载时渲染留言
+renderMessages();
+</script>
 </body>
 </html>
